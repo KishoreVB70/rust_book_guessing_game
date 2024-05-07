@@ -6,3 +6,4 @@
 - A looping game where user is needed to guess a number in input range
 - The program will generate a random number, if the guess doesn't match, the program would instruct the user if the guess is higher or smaller
 - The loop will continue till the user guesses the correct number
+- Added the additional functionality of obtaining the guess upper limit from the user
