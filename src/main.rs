@@ -3,17 +3,22 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 fn main() {
+    println!("welcome to the guessing game, enter the upper limit of the number you want to guess");
+    let mut upper_limit = String::new();
+    io::stdin().read_line(&mut upper_limit).expect("Failed to obtain the input");
+    let upper_limit: u32 = upper_limit.trim().parse().expect("enter a number");
+
     // Generate a random number
-    let rand_num = rand::thread_rng().gen_range(1..=10);
+    let rand_num = rand::thread_rng().gen_range(1..=upper_limit);
 
     //Start the loop for the game
     loop {
         // Create empty string
         let mut guess = String::new();
-        println!("Welcome to the guessing game, enter a number from 1 to 10");
+        println!("Enter a number from 1 to {upper_limit}");
 
         //Get input from the user
-        io::stdin().read_line(&mut guess).expect("Failed to get the input");
+        io::stdin().read_line(&mut guess).expect("Failed to obtain the input");
 
         //Convert the string to a u32
         // trim to remove any whitespace in the user input(error prevention)
