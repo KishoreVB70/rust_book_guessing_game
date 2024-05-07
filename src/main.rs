@@ -26,12 +26,9 @@ fn main() {
             // If they are equal, break the loop
             Ordering::Equal => {
                 println!("You win! Game over!");
+                println!("The generated number is indeed {rand_num}");
                 break;
             }
         }
-
-        // Print both the values for user reference
-        println!("generated number: {rand_num}");
-        println!("You have guessed: {guess}");
     } 
 }
